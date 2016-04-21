@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     "HN": "Honduras",
     "DO": "Republica Dominicana",
     "ES": "España",
-    ""  : "Otro"
+    "XX": "Otro"
   }
 
   for (var key in country_arr) {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 });
 
-var states_arr = {
+var cities_arr = {
   "PR": ["Adjuntas", "Aguada", "Aguadilla", "Aguas Buenas", "Aibonito", "Anasco", "Arecibo", "Arroyo", "Barceloneta", "Barranquitas", "Bayamon", "Cabo Rojo", "Caguas", "Camuy", "Canovanas", "Carolina", "Catano", "Cayey", "Ceiba", "Ciales", "Cidra", "Coamo", "Comerio", "Corozal", "Culebra", "Dorado", "Fajardo", "Florida", "Guanica", "Guayama", "Guayanilla", "Guaynabo", "Gurabo", "Hatillo", "Hormigueros", "Humacao", "Isabela", "Jayuya", "Juana Diaz", "Juncos", "Lajas", "Lares", "Las Marias", "Las Piedras", "Loiza", "Luquillo", "Manati", "Maricao", "Maunabo", "Mayaguez", "Moca", "Morovis", "Naguabo", "Naranjito", "Orocovis", "Patillas", "Penuelas", "Ponce", "Quebradillas", "Rincon", "Rio Grande", "Sabana Grande", "Salinas", "San German", "San Juan", "San Lorenzo", "San Sebastian", "Santa Isabel", "Toa Alta", "Toa Baja", "Trujillo Alto", "Utuado", "Vega Alta", "Vega Baja", "Vieques", "Villalba", "Yabucoa", "Yauco"],
   "US": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
   "MX": ["Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Coahuila de Zaragoza", "Colima", "Distrito Federal", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Mexico", "Michoacan de Ocampo", "Morelos", "Nayarit", "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro de Arteaga", "Quintana Roo", "San Luis Potosi", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz-Llave", "Yucatan", "Zacatecas"],
@@ -48,33 +48,33 @@ var states_arr = {
   "ES": ["Andalucia", "Aragon", "Asturias", "Baleares (Balearic Islands)", "Canarias (Canary Islands)", "Cantabria", "Castilla y Leon", "Castilla-La Mancha", "Cataluna", "Ceuta", "Communidad Valencian", "Extremadura", "Galicia", "Islas Chafarinas", "La Rioja", "Madrid", "Melilla", "Murcia", "Navarra", "Pais Vasco (Basque Country)", "Penon de Alhucemas", "Penon de Velez de la Gomera"],
 }
 
-function showstates(iso) {
+function showcities(iso) {
 
-  if (iso!='') {
+  if (iso!='XX') {
 
     setTimeout(function() {
 
-      document.getElementById('state_sec').style.display = 'block';
+      document.getElementById('city_sec').style.display = 'block';
 
-      var states = states_arr[iso];
+      var cities = cities_arr[iso];
       Object.prototype.newMethod = "cc";
 
-      document.getElementById('state').innerHTML = '';
+      document.getElementById('city').innerHTML = '';
 
-      for (var i = 0; i < states.length; i++) {
+      for (var i = 0; i < cities.length; i++) {
 
-        var states_opt = document.createElement('option');
-        states_opt.value = states[i];
-        states_opt.text = states[i];
+        var cities_opt = document.createElement('option');
+        cities_opt.value  = cities[i];
+        cities_opt.text   = cities[i];
 
-        document.getElementById("state").appendChild(states_opt);
+        document.getElementById("city").appendChild(cities_opt);
       }
 
     }, 10);
 
   } else {
 
-    document.getElementById('state_sec').style.display = 'none';
+    document.getElementById('city_sec').style.display = 'none';
     return;
   }
 }
