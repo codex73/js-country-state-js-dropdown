@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>js-country-state-js-dropdown</title>
+    <style type="text/css">
+
+    	label {
+			display:block;
+			font-weight: bold;
+			font-color: #666;
+    	}
+
+    	select,input {
+		  font-size: 16px;
+		  padding: 10px;
+		  margin: 10px 0;
+		  
+		}
+    </style>
+    <script type="text/javascript" src="js_country_state_js_dropdown.js"></script>
+</head>
+
+<body>	
+	<label>Country</label>
+    <select id="country" onchange="showstates(this.value)" name="country">
+        <option value="">Select</option>
+    </select>
+    <br/>
+    <div id="state_sec" style="display:none;">
+    	<label>Pueblo/Estado/Provincia</label>
+    	<select id="state"></select>
+    </div>    
+</body>
+
+</html>
